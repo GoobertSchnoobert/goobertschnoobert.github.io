@@ -6,7 +6,7 @@
   <style>
     .concrete{
       background-image: url(/files/images/concrete.jpg);
-      background-repeat: repeat; corner-shape: bevel;
+      background-repeat: repeat;
       corner-shape: bevel;
       border-radius: 5px;
       border-top:5px solid rgba(255, 255, 255, 0.5);
@@ -14,6 +14,29 @@
       border-left:5px solid rgba(255, 255, 255, 0.5);
       border-right:5px solid rgba(0, 0, 0, 0.5);
       filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 1));
+    }
+    .cube{
+      --lx;
+      --ly;
+      --lz;
+      --offset: calc(var(--size) * 0.7071);
+      background-repeat: repeat;
+      width: var(--lx);
+      height: var(--ly);
+    }
+    .cube::before{
+      transform: skew(45deg, 0deg);
+      width: var(--lx);
+      height: var(--offset);
+      bottom: 100%;
+      left: 0;
+    }
+    .cube::after{
+      transform: skew(0deg, 45deg);
+      width: var(--offset);
+      height: var(--lz);
+      top: 0;
+      left: 100%;
     }
     .vbg {
         position: fixed;
@@ -51,5 +74,7 @@
     div test :-) <p></p>
     GITHUB COPILOT FOR GODS SAKE CAN YOU PLEASE STOP WITH THE AI GENERATED COMMIT MESSAGES. I DONT WANT THOSE AND AM NOT BUYING ANY OF THAT. PLEASE KEEP THE COMMITS A GENERIC "Updated index.html"
     </div>
+    <div class=concrete style="width: 200px; height: 100px; transform: rotateX(15deg) rotateY(15deg);">
+    <div class=cube style="--lx=50; --ly=50; --lz=50; ">hi</div>
   </body>
 </html>
