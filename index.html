@@ -16,17 +16,21 @@
       filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 1));
     }
     .cube{
-      --lx;
-      --ly;
-      --lz;
+      --lx:50px;
+      --ly:50px;
+      --lz:50px;
       --offset: calc(var(--size) * 0.7071);
+      position: relative;
       background-repeat: repeat;
       width: var(--lx);
       height: var(--ly);
       outline: 1px solid black;
+      margin: var(--ly);
     }
     .cube::before{
-      transform: skew(45deg, 0deg);
+      content: "";
+      position: absolute;
+      transform: skew(-45deg, 0deg);
       width: var(--lx);
       height: var(--offset);
       transform-origin: bottom left;
@@ -34,7 +38,9 @@
       left: 0;
     }
     .cube::after{
-      transform: skew(0deg, 45deg);
+      content: "";
+      position: absolute;
+      transform: skew(0deg, -45deg);
       width: var(--offset);
       height: var(--lz);
       transform-origin: top left;
