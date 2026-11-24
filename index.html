@@ -23,11 +23,13 @@
       background-repeat: repeat;
       width: var(--lx);
       height: var(--ly);
+      outline: 1px solid black;
     }
     .cube::before{
       transform: skew(45deg, 0deg);
       width: var(--lx);
       height: var(--offset);
+      transform-origin: bottom left;
       bottom: 100%;
       left: 0;
     }
@@ -35,6 +37,7 @@
       transform: skew(0deg, 45deg);
       width: var(--offset);
       height: var(--lz);
+      transform-origin: top left;
       top: 0;
       left: 100%;
     }
@@ -75,6 +78,6 @@
     GITHUB COPILOT FOR GODS SAKE CAN YOU PLEASE STOP WITH THE AI GENERATED COMMIT MESSAGES. I DONT WANT THOSE AND AM NOT BUYING ANY OF THAT. PLEASE KEEP THE COMMITS A GENERIC "Updated index.html"
     </div>
     <div class=concrete style="width: 200px; height: 100px; transform: rotateX(15deg) rotateY(15deg);">
-    <div class=cube style="--lx=50; --ly=50; --lz=50; ">hi</div>
+    <div class=cube style="--lx=50px; --ly=50px; --lz=50px; background-image: url(/files/images/marble.jpg);">hi</div>
   </body>
 </html>
